@@ -1,0 +1,49 @@
+#!/bin/bash
+
+
+# Get the app name from the user
+read -p "Enter the name of your React app: " app_name
+
+# Check if the app name is provided
+if [ -z "$app_name" ]; then
+  echo "Error: Please provide a name for your React app."
+  exit 1
+fi
+
+# Convert the app name to lowercase
+app_name_lower=$(echo "$app_name" | tr '[:upper:]' '[:lower:]')
+
+# Create the React app
+create-react-app "$app_name_lower"
+
+# Check if the creation was successful
+if [ $? -eq 0 ]; then
+  echo "React app '$app_name_lower' created successfully!"
+
+  # Navigate to the project directory
+  cd "$app_name_lower"
+
+  # Delete specific files in the src directory
+
+  cd src
+  rm App.css App.test.js logo.svg reportWebVitals.js setupTests.js
+  cd ..
+  # Display success message
+  echo "Unnecessary files in the 'src' directory deleted successfully."
+else
+  echo "Error: Failed to create React app."
+fi
+if [ $? -eq 0 ]; then
+	npm install -D tailwindcss
+	npx tailwindcss init
+
+	echo “Successfully installed tailwind.”
+	# Append @tailwind directives to index.css
+ 	 echo -e "@tailwind base;\n@tailwind components;\n@tailwind utilities;" > src/index.css
+  	echo "Directives added to src/index.css."
+	# Append configuration to tailwind.config.js
+	  echo -e "/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  content: [\"./src/**/*.{html,jsx,js}\"],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}" > tailwind.config.js
+ 	 echo "Configuration added to tailwind.config.js."
+else
+	echo “Failed to install tailwind css.”
+fi
