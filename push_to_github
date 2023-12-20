@@ -1,1 +1,22 @@
+#!/bin/bash
 
+# First, update the local repository with the latest changes
+git pull
+
+# Get the commit message from the user
+read -p "Enter the commit message: " commit_message
+
+# Check if the commit message is provided
+if [ -z "$commit_message" ]; then
+  echo "Warning: Commit message is empty. Defaulting to 'updated the .js file.'"
+  commit_message="updated the .js file."
+fi
+
+#show the status of files which are going to commi in the github
+git status 
+
+# Proceed with further actions, such as committing the code.
+
+git add .
+git commit -m "$commit_message"
+git push
