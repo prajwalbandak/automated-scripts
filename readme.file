@@ -1,5 +1,11 @@
+If you want to automate the execution of scripts in a specific folder, follow these steps:
 
-if want to run the automated the scripts in some folder, then 
-1. go to the particular folder, wher you want to run the particular scripts
-2. Use the particular command to run the scripts
-  bash /Users/prajwalbandak/Desktop/OPEN_SOURCE_PROJECTS/push_to_github.sh
+Navigate to the desired folder where you want to run the scripts.
+
+Use the appropriate command to execute the scripts. For example, if you're using a Bash script named push_to_github.sh, you can run the following command:
+
+bash
+Copy code
+cd /Users/prajwalbandak/Desktop/OPEN_SOURCE_PROJECTS/
+bash push_to_github.sh
+This assumes that the script push_to_github.sh is located in the specified directory.
