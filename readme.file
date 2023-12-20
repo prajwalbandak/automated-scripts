@@ -1,1 +1,5 @@
 
+if want to run the automated the scripts in some folder, then 
+1. go to the particular folder, wher you want to run the particular scripts
+2. Use the particular command to run the scripts
+  bash /Users/prajwalbandak/Desktop/OPEN_SOURCE_PROJECTS/push_to_github.sh
