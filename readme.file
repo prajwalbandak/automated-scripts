@@ -9,3 +9,9 @@ Copy code
 cd /Users/prajwalbandak/Desktop/OPEN_SOURCE_PROJECTS/
 bash push_to_github.sh
 This assumes that the script push_to_github.sh is located in the specified directory.
+
+
+
+If you want to run a particular .sh file in a different folder, please execute the following command:
+
+Example: bash /Users/prajwalbandak/Desktop/OPEN_SOURCE_PROJECTS/push_to_github.sh
